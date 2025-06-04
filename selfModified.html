@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MW Gallery</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .navBar {
+      background-color: #1e8fad;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navBar h2 {
+      margin: 10px 100px;
+      text-shadow: 4px 4px 8px rgb(0, 0, 0);
+    }
+    #navLink a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 65px;
+      font-size: smaller;
+    }
+    #navLink a:hover {
+      text-decoration: underline;
+    }
+
+    #home {
+      background-image: url('bubbles-total-glossy-background-image.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 82vh;
+      align-items: center;
+      text-align: center;
+    }
+
+    #home h1 {
+      text-shadow: 2px 2px 4px white;
+      font-family: Serif, Georgia;
+      width: 70%;
+      font-size: 60px;
+      margin: auto;
+      padding: 60px;
+    }
+
+    #typewriter {
+      font-family: "Brush Script MT", cursive;
+      font-size: 30px;
+      font-weight: bold;
+      width: 70%;
+      margin: 0 auto;
+    }
+
+
+
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .about-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #0ba6b7;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.5s; /* delay before it starts */
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #044962;
+}
+
+#button {
+  margin-top: 50px;
+  align-items: right;
+  padding-right: 30px;
+  padding-left: 60%;
+}
+
+
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="navBar">
+    <h2>MW Gallery</h2>
+    <div id="navLink">
+      <a href="selfModified.html">Home</a>
+      <a href="modified.html">About</a>
+      <a href="myGallery.html">My Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div id="home">
+    <h1>Discover Art That Inspires And Delights</h1>
+    <p id="typewriter">"Welcome to our little world — a space created out of our shared love for art in all its forms. This space is both personal and open — a quiet archive for ourselves, and a welcoming gallery for anyone who appreciates the beauty and emotion that art can bring. We’re glad you’re here. Take your time, explore, and enjoy the journey."</p>
+    <div id="button">
+      <a href="modified.html" class="about-button">
+        Let me walk you through my humble Abode &rarr;
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 MW Gallery. All rights reserved.
+  </footer>
+
+  
+</body>
+</html>

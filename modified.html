@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MW Gallery</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .navBar {
+      background-color: #1e8fad;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navBar h2 {
+      margin: 10px 100px;
+      text-shadow: 4px 4px 8px rgb(0, 0, 0);
+    }
+    #navLink a {
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 65px;
+      font-size: smaller;
+      color: white;
+    }
+    #navLink a:hover {
+      text-decoration: underline;
+    }
+
+    #about {
+      background-image: url("media/meLandscape.jpeg");
+      background-size: cover;
+      background-position: center;
+      min-height: 82vh;
+      position: relative;
+      text-align: left;
+      padding: 40px 60px;
+      box-sizing: border-box;
+    }
+
+    /* The dark overlay */
+    #text-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* dark translucent */
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 1;
+    }
+
+    #about h2 {
+      text-shadow: 4px 4px 8px rgb(0, 0, 0);
+      font-family: Serif, Georgia;
+      font-size: 60px;
+      color: #083e76;
+      position: relative;
+      z-index: 2;
+      margin: 0px 40px;
+    }
+
+    #typewriter {
+      font-family: "Brush Script MT", cursive;
+      font-size: 30px;
+   
+      width: 50%;
+      white-space: pre-wrap;
+      color: white;
+      
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navBar">
+    <h2>MW Gallery</h2>
+    <div id="navLink">
+      <a href="selfModified.html">Home</a>
+      <a href="modified.html">About</a>
+      <a href="myGallery.html">My Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <!-- Dark overlay -->
+    <div id="text-overlay"></div>
+
+    <h2>Who We Are</h2>
+    <p id="typewriter"></p>
+  </section>
+
+  <footer>
+    &copy; 2025 MW Gallery. All rights reserved.
+  </footer>
+
+  <script>
+    const text = `"We are two old-school souls bound by love for art, nature, architecture and its unsaid stories — In every brushstroke, melody, and line, we find a world where silence speaks and beauty gently rewrites time.\nThis corner is our heaven, quietly made, where favorite works find room to stay, a gallery of dreams, softly displayed in hues of night and light of day.\nBut more than ours, it’s yours to find — a space for hearts that feel and see, where fellow dreamers wander in and leave with traces of artistry."`;
+
+    const target = document.getElementById("typewriter");
+    const overlay = document.getElementById("text-overlay");
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        target.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 35); // typing speed
+      }
+    }
+
+    // Show overlay first, then type
+    window.onload = () => {
+      // Wait a moment, fade in overlay, then type
+      setTimeout(() => {
+        overlay.style.opacity = 1;
+        setTimeout(typeWriter, 1000); // Start typing after overlay is visible
+      }, 500); // optional initial delay
+    };
+  </script>
+
+</body>
+</html>
